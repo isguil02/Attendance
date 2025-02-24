@@ -1,5 +1,25 @@
 public class Student {
-    public static void main(String[] args) {
-        System.out.println("Hello, World!");
+    private int seat;
+    private String name;
+
+    public Student(int seat, string name) {
+        this.seat = seat;
+        this.name = name;
+    }
+
+    public int getSeat() {
+        return seat;
+    }
+
+    public void setSeat(int seat) {
+        this.seat = seat;
+    }
+    @overide
+    public String toString() {
+        return "Student{" +
+                "seat=" + seat +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
+

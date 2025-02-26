@@ -10,7 +10,7 @@ public class Student {
     private int seat;
     private String name;
 
-    public Student(int seat, string name) {
+    public Student(int seat, String name) {
         this.seat = seat;
         this.name = name;
     }
@@ -22,7 +22,8 @@ public class Student {
     public void setSeat(int seat) {
         this.seat = seat;
     }
-    @overide
+
+    @Override
     public String toString() {
         return "Student{" +
                 "seat=" + seat +

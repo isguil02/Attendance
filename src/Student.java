@@ -1,10 +1,9 @@
 /**
- * A Student in a Course and student's seat
- *
- * @author Seth Pipim and Isaiah
- * @version 1.0 beta
- * @see <a href="https://github.com/isguil02/Attendance.git">Github Repository</a>
+ *The type Student that tracks their seat and the number of unexcused and excused attendance, late and on time arrivals.
  * @since 2025.02.21
+ * @version 1.0 beta
+ * @author Seth Pipim and Isaiah
+ * @see <a href="https://github.com/isguil02/Attendance.git">Github Repository</a>
  */
 
 public class Student {

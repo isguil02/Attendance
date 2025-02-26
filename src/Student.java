@@ -37,6 +37,7 @@ public class Student {
      */
     private int unexcused;
 
+
     /**
      * Set the Student's fields to default values null and zeroes.
      * The default constructor is PRIVATE, so it is ONLY called by the overload constructor.
@@ -49,20 +50,90 @@ public class Student {
         late = 0;
         excused = 0;
         unexcused = 0;
-    }// end of default constructor
+    } // end of default constructor
 
-    public Student(int seat, String name) {
-        this.seat = seat;
-        this.name = name;
+    /**
+     * This overload constructor should only be used by the ArrayList indexOf method
+     * to detect if a seat is already filled by overriding the equals method to test
+     * if two students are equal based on their seat number.
+     * @param seat The Student's seat #
+     * @throws Exception if the setSeat method throws a data validation error.
+     */
+    public Student(int seat, String name) throws Exception {
+        this();
+        setSeat(seat);
+        setName(name);
     }
 
-    public int getSeat() {
-        return seat;
+    /**
+     * Get the Student seat number.
+     * @return The Student's seat number
+     */
+
+    public int getSeat() { return seat; }
+    /**
+     * Get the Student's name.
+     * @return The Student's name.
+     */
+
+    public String getName(){ return name; }
+
+    /**
+     * Get the Student's number of onTime arrivals.
+     * @return the number of onTime arrivals by the Student.
+     */
+    
+    public int getOnTime() { return onTime; }
+    /**
+     * Get the Student's number of late arrivals.
+     * @return the number of late arrivals by the Student.
+     */
+
+    public int getLate() { return late; }
+
+    /**
+     * Get the Student's number of excused absence.
+     * @return the number of excused absence by the Student.
+     */
+    public int getExcused() { return excused; }
+
+    /**
+     * Get the Student's number of unexcused absence.
+     * @return the number of unexcused absence by the Student.
+     */
+    public int getUnexcused() { return unexcused; }
+
+    /**
+     * Set the Student's seat number if it's a positive number between 1 and 55
+     * otherwise it throws an error.
+     * @param seat the player's seat number
+     * @throws Exception if the seat number isn't between 0 and 55 inclusively.<br>
+     * Error Example: Invalid seat number #10 for name Bob!
+     */
+    public void setSeat(int seat) throws Exception {
+        if (seat >= 0 && seat <= 55)
+            this.seat = seat;
+        else
+            throw new Exception("Invalid seat number #" + seat + "for name" + name + "!");
+    }
+    /**
+     * Set the Student's name. Uses the trim method to remove leading and trailing spaces
+     * and then if the name is an empty string, it will throw an error
+     * if not then it will set the student's name.
+     * @param name The Student's name
+     * @throw Exception if the student's name is blank (whitespace or empty)<br>
+     * Error Example: Name cannot be blank for seat number #10!
+     */
+    public void setName(String name) throws Exception {
+        name = name.trim();
+
+        if (name.isBlank())
+            throw new Exception("Name cannot be blank for student number #" + seat + "!" );
+        else
+            this.name = name;
+
     }
 
-    public void setSeat(int seat) {
-        this.seat = seat;
-    }
 
     @Override
     public String toString() {

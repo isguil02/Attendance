@@ -192,7 +192,6 @@ public class Student {
             return false;
         Student other = (Student)object;
         return this.seat == other.getSeat();
-
     }
     @Override
     public String toString() {

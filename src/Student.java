@@ -179,6 +179,21 @@ public class Student {
         System.out.println("Excused: " + excused);
         System.out.println("Unexcused: " + unexcused);
     }
+
+    /**
+     * Checks if this student is equal to another object.
+     * Two students are considered equal if they have the same seat number.
+     *
+     * @param object the object to compare with
+     * @return true if the object is a Student with the same seat number, false otherwise
+     */
+    public boolean equals(Object object) {
+        if(!(object instanceof Student))
+            return false;
+        Student other = (Student)object;
+        return this.seat == other.getSeat();
+
+    }
     @Override
     public String toString() {
         return "Student{" +

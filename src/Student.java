@@ -149,7 +149,36 @@ public class Student {
 
     }
 
+    public void updateAttendance(int onTime) throws Exception {
+    switch (onTime) {
+        case 0:
+            unexcused++;
+            break;
+        case 1:
+            excused++;
+            break;
+        case 2:
+            late++;
+            break;
+        case 3:
+            this.onTime++;
+            break;
+        default:
+            throw new Exception("Invalid attendance code " + onTime);
+        }
+    }
 
+
+
+    /**
+     * Display the attendance details of the student.
+     */
+    public void displayAttendance() {
+        System.out.println("On Time: " + onTime);
+        System.out.println("Late: " + late);
+        System.out.println("Excused: " + excused);
+        System.out.println("Unexcused: " + unexcused);
+    }
     @Override
     public String toString() {
         return "Student{" +

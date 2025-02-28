@@ -59,6 +59,21 @@ public class Student {
      * @param seat The Student's seat #
      * @throws Exception if the setSeat method throws a data validation error.
      */
+    public Student(int seat) throws Exception {
+        this();
+        setSeat(seat);
+    } // end of jesery overload constructor
+
+    /**
+      * Allow creating a Student plus setting their name and seat number.
+      * The constructor first calls the default constructor and then
+      * calls both the setName and setSeat methods for data validation.
+      * @param name The Students' name
+      * @param seat The Students' seat #
+      * @throws Exception if the name or seat setters throws an error
+      */
+
+
     public Student(int seat, String name) throws Exception {
         this();
         setSeat(seat);

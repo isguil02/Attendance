@@ -8,7 +8,7 @@
 
 public class Student {
     /**
-     * The Students's seat.
+     * The Student's seat.
      */
     private int seat;
 
@@ -62,7 +62,8 @@ public class Student {
     public Student(int seat) throws Exception {
         this();
         setSeat(seat);
-    } // end of jesery overload constructor
+        setName(name);
+    } // end of seat overload constructor
 
     /**
       * Allow creating a Student plus setting their name and seat number.
@@ -143,7 +144,7 @@ public class Student {
         name = name.trim();
 
         if (name.isBlank())
-            throw new Exception("Name cannot be blank for student number #" + seat + "!" );
+            throw new Exception("Name cannot be blank for seat number #" + seat + "!" );
         else
             this.name = name;
 
@@ -167,7 +168,33 @@ public class Student {
             throw new Exception("Invalid attendance code " + onTime);
         }
     }
+/**
+ * Get the Student's total attendance points by calculating it based on attendance types.
+ * @return The Student's total attendance points = onTime + (late * 2) + (excused * 3)
+ */
+public int getAttendancePoints() {
+    return onTime + (late * 2) + (excused * 3);
+}
 
+/**
+ * Get the Student's total number of absences by summing excused and unexcused absences.
+ * @return The total number of absences (excused + unexcused).
+ */
+public int getAbsences() {
+    return excused + unexcused;
+}
+
+public int getSeatNumber() {
+    return seat;
+}
+
+/**
+ * Display the Student's seat number, name, and attendance points via getAttendancePoints method<br>
+ * Example: #10 Billy Attendance Points=5
+ */
+public void displayStats() {
+    System.out.print("#" + seat + " " + name + " Attendance Points=" + getAttendancePoints());
+}
 
 
     /**
@@ -187,6 +214,7 @@ public class Student {
      * @param object the object to compare with
      * @return true if the object is a Student with the same seat number, false otherwise
      */
+    @Override
     public boolean equals(Object object) {
         if(!(object instanceof Student))
             return false;

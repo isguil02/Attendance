@@ -210,8 +210,8 @@ private void updateStudentAttendance(Student student) {
  * displayCourseAttendance for both section1 and section2.
  */
 private void updateAttendanceReport() {
-    section1.displayCourseAttendance();
-    section2.displayCourseAttendance();
+    section1.displayCourseStats();
+    section2.displayCourseStats();
 }
 
 /**
@@ -219,8 +219,8 @@ private void updateAttendanceReport() {
  * for both section1 and section2.
  */
 private void displayAttendanceStatus() {
-    section1.displayDetailedAttendance();
-    section2.displayDetailedAttendance();
+    section1.displayDetailStats();
+    section2.displayDetailStats();
 } // end of displayAttendanceStatus
 
 /**

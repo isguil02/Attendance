@@ -166,5 +166,5 @@ public void displayDetailStats() {
 public String toString() {
     return name;
 }
-}
+} // end of Course class
 

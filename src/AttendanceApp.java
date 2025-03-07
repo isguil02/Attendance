@@ -70,7 +70,6 @@ private void setupCourses() throws Exception {
         String courseName = course.getName();
         String name;
         int seat;
-
         while (true) {
             System.out.println();
             name = Input.getLine("Enter " + courseName + " student's name or 'q' to quit: ");
@@ -84,7 +83,7 @@ private void setupCourses() throws Exception {
                 System.out.println("Unable to add student!");
             }
         }
-    } // end of setupStudents
+    }  // end of setupStudents // end of setupStudents
     /**
      * Keeps the application running via menu options. Example:<br>
      * <pre>

@@ -85,7 +85,86 @@ public class Course {
             throw new Exception("Seat #" + seat + " is already assigned to " + student.getName() + "!");
         }
     }
+
+
+public int getTotalAttendancePoints() {
+    int totalAttendancePoints = 0;
+
+    for (Student student : students) {
+        totalAttendancePoints += student.getAttendancePoints();
+    }
+
+    return totalAttendancePoints;
 }
 
 
+
+/**
+ * Get the total number of absences for the entire course using the Student.getAbsences method.
+ * Uses a for loop to sum all the course's students' absences.
+ * @return The total number of absences for the course.
+ */
+public int getTotalAbsences() {
+    int totalAbsences = 0;
+
+    for (Student student : students) {
+        totalAbsences += student.getAbsences();
+    }
+
+    return totalAbsences;
+}
+
+/**
+ * Display the course's summary stats using the Course.getTotalAbsences and getTotalAttendancePoints methods.<br>
+ * Example: <br>
+ * <pre>Course Java Programming Absences=4 Attendance Points=23</pre>
+ */
+public void displayCourseStats() {
+    System.out.println("Course " + name + " Absences=" + getTotalAbsences() + " Attendance Points=" + getTotalAttendancePoints());
+}
+
+/**
+ * Displays each Student's detail stats for the entire course using the Student's getter methods.<br>
+ * This method uses the printf method for proper stats alignment. Example:<br>
+ * <pre>
+ * Seat Number Name           OnTime Late Excused Unexcused
+ * =========== =============== ====== ==== ====== =========
+ *          10 Billy               3    2      1         0
+ *          24 Tammy               4    1      0         0
+ * </pre>
+ */
+public void displayDetailStats() {
+
+    Student student;
+
+    displayCourseStats();
+
+    System.out.println("Seat Number Name           OnTime Late Excused Unexcused");
+    System.out.println("=========== =============== ====== ==== ====== =========");
+
+    for (Student value : students) {
+
+        student = value;
+
+        System.out.printf("%11d %-15s %6d %4d %6d %9d\n",
+                student.getSeatNumber(),
+                student.getName(),
+                student.getOnTime(),
+                student.getLate(),
+                student.getExcused(),
+                student.getUnexcused());
+    }
+
+    System.out.println();
+}
+
+/**
+ * Returns the course's name.
+ * @return Course name.
+ */
+@Override
+public String toString() {
+    return name;
+}
+}
 

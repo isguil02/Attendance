@@ -35,25 +35,25 @@ public class AttendanceApp {
  *  </pre>
  */
 private void displayAppHeading() {
-    System.out.println("DOUBLE_DASH_LINE");
+    System.out.println(DOUBLE_DASH_LINE);
     System.out.println("Welcome to Attendance App");
-    System.out.println("DOUBLE_DASH_LINE");
+    System.out.println(DOUBLE_DASH_LINE);
     System.out.println();
 } // ending of displayAppHeading
 
 private void setupCourses() throws Exception {
     String userInput;
-        userInput = Input.getLine("Enter the course name for section 1: ");
-        section1.setName(userInput);
-        setupCourses(section1);
+    userInput = Input.getLine("Enter the course name for section 1: ");
+    section1.setName(userInput);
+    setupStudents(section1); // Corrected method call
 
-        System.out.println();
-        System.out.println(SINGLE_DASH_LINE);
-        System.out.println();
+    System.out.println();
+    System.out.println(SINGLE_DASH_LINE);
+    System.out.println();
 
-        userInput = Input.getLine("Enter the course name for section 2: ");
-        section2.setName(userInput);
-        setupCourses(section2);
+    userInput = Input.getLine("Enter the course name for section 2: ");
+    section2.setName(userInput);
+    setupStudents(section2); // Corrected method call
 } // end of setupCourses
     /**
      * Sets up the course's students.<br>
@@ -70,6 +70,7 @@ private void setupCourses() throws Exception {
         String courseName = course.getName();
         String name;
         int seat;
+
         while (true) {
             System.out.println();
             name = Input.getLine("Enter " + courseName + " student's name or 'q' to quit: ");

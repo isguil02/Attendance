@@ -27,16 +27,6 @@ public class Course {
         this.students = new ArrayList<>();
     }
     /**
-     * Calls the default constructor, and then set's the course's name using the setter for data validation.
-     * @param name the course's name
-     * @throw Exception if the setName fails due to a blank name
-     */
-    public Course(String name) throws Exception {
-        this();
-        setName(name);
-    }
-
-    /**
      * Gets the course's name.
      * @return The course's name.
      */
@@ -97,6 +87,5 @@ public class Course {
     }
 }
 
-public void displaySummaryReport() {
-    System.out.println("Course " + name + " Attendance Summary: OnTime = " + totalOnTime + " Late = " + totalLate + " Excused = " + totalExcused + " Unexcused = " + totalUnexcused);
-}
+
+
